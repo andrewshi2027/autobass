@@ -29,3 +29,6 @@ BACKUP_DIR="$TARGET_DIR/backup_$TIMESTAMP"          # Ex: /target_dir/backup_202
 echo "Creating backup directory: $BACKUP_DIR"
 mkdir -p "$BACKUP_DIR"                              # -p flag creates parent directories
 
+# [3] It must copy all files from the source to this new target folder using rsync or cp.
+echo "Copying files from $SOURCE_DIR to $BACKUP_DIR"
+rsync -av "$SOURCE_DIR/" "$BACKUP_DIR/"
