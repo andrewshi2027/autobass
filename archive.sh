@@ -17,3 +17,15 @@ fi
 # Assign arguments to Variables
 SOURCE_DIR="$1"          # First argument is the source directory
 TARGET_DIR="$2"          # Second argument is the target directory
+
+# [2] It must create a new folder in the target directory with a timestamp (e.g., backup_20250915_124506/).
+# Generate timestamp (format: YYYYMMDD_HHMMSS)
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+# Create backup directory name
+BACKUP_DIR="$TARGET_DIR/backup_$TIMESTAMP"          # Ex: /target_dir/backup_20250915_124506
+
+# Create the backup directory
+echo "Creating backup directory: $BACKUP_DIR"
+mkdir -p "$BACKUP_DIR"                              # -p flag creates parent directories
+
