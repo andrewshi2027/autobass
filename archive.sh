@@ -4,6 +4,24 @@
 # Notes
 # - Environment variables must be capitalized
 
+# [4] The script must have a --help or -h flag that prints usage instructions.
+
+# Function to display help message
+help_function() {
+    echo "Usage: $0 [OPTIONS] SOURCE_DIR TARGET_DIR"
+    echo ""
+    echo "Create a timestamp backup of SOURCE_DIR in TARGET_DIR"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help"
+    exit 1
+}
+
+# Check for help flag
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    help_function
+    exit 0
+fi
 
 # [1] It must accept two command-line arguments: (i) a source directory, and (ii) a target directory.
 
@@ -33,21 +51,4 @@ mkdir -p "$BACKUP_DIR"                              # -p flag creates parent dir
 echo "Copying files from $SOURCE_DIR to $BACKUP_DIR"
 rsync -av "$SOURCE_DIR/" "$BACKUP_DIR/"
 
-# [4] The script must have a --help or -h flag that prints usage instructions.
 
-# Function to display help message
-help_function() {
-    echo "Usage: $0 [OPTIONS] SOURCE_DIR TARGET_DIR"
-    echo ""
-    echo "Create a timestamp backup of SOURCE_DIR in TARGET_DIR"
-    echo ""
-    echo "Options:"
-    echo "  -h, --help"
-    exit 1
-}
-
-# Check for help flag
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    help_function
-    exit 0
-fi
