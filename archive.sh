@@ -1,7 +1,5 @@
 #!/bin/bash         
 
-# [4] The script must have a --help or -h flag that prints usage instructions.
-
 # Function to display help message
 help_function() {
     echo "Usage: $0 [OPTIONS] SOURCE_DIR TARGET_DIR"
@@ -20,8 +18,6 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 fi
 
 
-
-# ---------------------------------------------- NEW ----------------------------------------------
 # Logging function
 # - Writes to both terminal and archive.log
 log_message() {
@@ -40,27 +36,51 @@ log_message() {
     # Append to archive.log file
     echo "$log_formatted_message" >> archive.log
 }
-# -------------------------------------------------------------------------------------------------
-
-
-
-
-# It must accept two command-line arguments: a source directory, and a target directory.
-# Check for correct number of arguments 
-if [ "$#" -ne 2 ]; then
-    echo "Error: Invalid number of arguments"
-    help_function
-    exit 1
-fi
-
-# Assign arguments to Variables
-SOURCE_DIR="$1"          # First argument is the source directory
-TARGET_DIR="$2"          # Second argument is the target directory
 
 
 
 
 # ---------------------------------------------- NEW ----------------------------------------------
+# Source configuration file
+CONFIG_FILE="archive.conf"
+if [[ -f "$CONFIG_FILE" ]]; then
+    source "$CONFIG_FILE"
+else
+    echo "Warning: Configuration file ($CONFIG_FILE) not found. Command-line arguments required."
+fi
+# -------------------------------------------------------------------------------------------------
+
+
+
+# ---------------------------------------------- NEW ----------------------------------------------
+
+# Arguments are now optional - if not provided, use values from config file
+# If not provided, use values from config file
+if [ "$#" -eq 0 ]; then
+    # No arguments provided, use config file values
+    if [[ -z "$SOURCE_DIR" || -z "$TARGET_DIR" ]]; then
+        echo "Error: No command-line arguments provided and config file values are missing"
+        help_function
+        exit 1
+    fi
+    echo "Using configuration file defaults: SOURCE_DIR=$SOURCE_DIR, TARGET_DIR=$TARGET_DIR"
+# If two arguments are provided, use them
+elif [ "$#" -eq 2 ]; then
+    # Two arguments provided, use command-line arguments (override config)
+    SOURCE_DIR="$1"          # First argument is the source directory
+    TARGET_DIR="$2"          # Second argument is the target directory
+    echo "Using command-line arguments: SOURCE_DIR=$SOURCE_DIR, TARGET_DIR=$TARGET_DIR"
+# Invalid number of arguments
+else
+    echo "Error: Invalid number of arguments. Provide either 0 arguments (use config) or 2 arguments (SOURCE_DIR TARGET_DIR)"
+    help_function
+    exit 1
+fi
+# -------------------------------------------------------------------------------------------------
+
+
+
+
 
 # Log script start
 log_message "INFO" "archive script started."
@@ -112,5 +132,4 @@ else
     log_message "ERROR" "Backup failed during compression."
     exit 1
 fi
-# -------------------------------------------------------------------------------------------------
 
