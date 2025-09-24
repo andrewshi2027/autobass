@@ -1,0 +1,38 @@
+INFO: [2025-09-22 17:23:21] archive script started.
+INFO: [2025-09-22 17:23:21] Backing up from ../test_source to ../test_backup/backup_20250922_172321.tar.gz
+INFO: [2025-09-22 17:23:21] Backup completed successfully.
+INFO: [2025-09-23 23:04:54] archive script started.
+INFO: [2025-09-23 23:04:54] Backing up from ../test_source to ../test_backup/backup_20250923_230454.tar.gz
+INFO: [2025-09-23 23:04:54] Backup completed successfully.
+INFO: [2025-09-23 23:06:34] archive script started.
+ERROR: [2025-09-23 23:06:34] Source directory (/nonexistent/source) does not exist or is not readable. Exiting.
+INFO: [2025-09-23 23:07:12] archive script started.
+ERROR: [2025-09-23 23:07:12] Target directory (/root/cannot_create_here) does not exist or could not be created. Exiting.
+INFO: [2025-09-23 23:09:13] archive script started.
+INFO: [2025-09-23 23:09:13] Backing up from ../test_source to ../test_backup/backup_20250923_230913.tar.gz
+INFO: [2025-09-23 23:09:13] Backup completed successfully.
+INFO: [2025-09-23 23:10:40] archive script started.
+INFO: [2025-09-23 23:10:40] Backing up from ../fail_source to ../test_backup/backup_20250923_231040.tar.gz
+INFO: [2025-09-23 23:10:40] Backup completed successfully.
+INFO: [2025-09-23 23:15:15] archive script started.
+INFO: [2025-09-23 23:15:15] Backing up from ../fail_source to ../test_backup/backup_20250923_231515.tar.gz
+INFO: [2025-09-23 23:15:15] Backup completed successfully.
+INFO: [2025-09-23 23:15:57] archive script started.
+INFO: [2025-09-23 23:15:57] Backing up from ../fail_source to ../test_backup/backup_20250923_231557.tar.gz
+INFO: [2025-09-23 23:15:57] Backup completed successfully.
+INFO: [2025-09-23 23:18:34] archive script started.
+INFO: [2025-09-23 23:18:34] Backing up from ../fail_source to ../test_backup/backup_20250923_231834.tar.gz
+INFO: [2025-09-23 23:18:34] Backup completed successfully.
+INFO: [2025-09-23 23:20:55] archive script started.
+INFO: [2025-09-23 23:20:55] Backing up from ../test_source to ../test_backup/backup_20250923_232055.tar.gz
+INFO: [2025-09-23 23:20:55] Backup completed successfully.
+INFO: [2025-09-23 23:23:40] archive script started.
+INFO: [2025-09-23 23:23:40] Backing up from ../test_source to ../test_backup/backup_20250923_232340.tar.gz
+INFO: [2025-09-23 23:23:40] Backup completed successfully.
+INFO: [2025-09-23 23:27:12] archive script started.
+ERROR: [2025-09-23 23:27:12] Target directory (/root/readonly_target) does not exist or could not be created. Exiting.
+INFO: [2025-09-23 23:27:56] archive script started.
+INFO: [2025-09-23 23:27:56] Backing up from ../broken_source to ../test_backup/backup_20250923_232756.tar.gz
+INFO: [2025-09-23 23:27:56] Backup completed successfully.
+INFO: [2025-09-23 23:34:18] archive script started.
+ERROR: [2025-09-23 23:34:18] Source directory (test_source/) does not exist or is not readable. Exiting.
