@@ -1,0 +1,52 @@
+# Backup files created by the script
+*.tar.gz
+backup_*/
+
+# Log files
+*.log
+archive.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Test directories (optional - uncomment if you want to ignore test data)
+# test_*/
+# dummy_*/
+
+# Configuration backup files
+*.conf.bak
+*.conf~
+
+# Node modules (if any JavaScript tooling is added)
+node_modules/
+
+# Python cache (if any Python tooling is added)
+__pycache__/
+*.pyc
+*.pyo
+
+# Build artifacts
+build/
+dist/
+*.o
+*.so
+*.dylib
