@@ -1,6 +1,9 @@
 # autobass - Automated Backup Archive Script
 
-A flexible bash program that creates compressed archives with timestamp naming, configurable source/target paths, file exclusion patterns, and dry-run preview capabilities. This is designed for automated file archiving with error handling.
+This project provides a flexible Bash script that automates the creation of compressed, timestamped archives.
+It supports both command-line arguments and configuration files, allowing users to define source and target paths.
+Exclusion patterns can be specified with a .bassignore file to skip unnecessary files or directories during backup.
+A dry-run mode, detailed logging, and built-in error handling make it reliable for scheduled or manual archiving tasks.
 
 ## Installation
 
