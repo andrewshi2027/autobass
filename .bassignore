@@ -1,0 +1,38 @@
+# Bassignore - patterns of files/directories to exclude from backup
+# Each line represents a pattern to exclude
+
+# Log files
+*.log
+*.out
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Version control
+.git/
+.svn/
+
+# Build artifacts
+*.o
+*.class
+build/
+dist/
+
+# Cache directories
+.cache/
+node_modules/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
